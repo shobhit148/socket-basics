@@ -13,7 +13,8 @@ io.on('connection', function(socket){
 		console.log('Message Recived: ' + message.text);
 
 		io.emit //for every one
-		socket.broadcast.emit('message', message) //send to every body not to sendor
+		//socket.broadcast.emit('message', message) //send to every body not to sendor
+		io.emit('message', message) //send to every body not to sendor
 	});
 
 	socket.emit('message', {
